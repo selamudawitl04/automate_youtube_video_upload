@@ -8,14 +8,14 @@
 
 Steps to run the program
 
-1. Configure username and password of the instagram user in config.py like below
-   IG_USERNAME = ""
-   IG_PASSWORD = ""
-2. Configure google cloud provider and download client_secret.json
+1. Scrapping Videos from Instagram
 
-3. Setup the google api
+   The program scrapes videos from Instagram by logging into a specified Instagram account, retrieving a list of followees, and then iterating through their recent posts to identify and download videos. The number of days to look back and the maximum number of videos to download per followee can be configured. The program handles session management to maintain an authenticated state, ensuring uninterrupted access to the Instagram API.
+
+2. Configure google cloud provider and download client_secret.json
    python setup_google.py
-4. Run the program
+   To enable the application to upload videos to YouTube, you need to set up Google API authentication. This process involves downloading the client_secret.json file from the Google Cloud Console, setting up OAuth 2.0 credentials, and using the provided Python function to authenticate and store the credentials in a pickle file for future use.
+3. Run the program
    python main.py
 
 # Configuration Options
