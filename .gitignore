@@ -1,0 +1,6 @@
+venv
+client_secret.json
+config.py
+task.txt
+token_youtube_v3.pickle
+token.json
