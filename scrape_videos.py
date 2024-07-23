@@ -4,7 +4,7 @@ import config
 from datetime import datetime, timedelta
 
 def remove_session(username):
-    session_file = f"/home/minab/.config/instaloader/session-{username}"
+    session_file = os.path.expanduser(f"~/.config/instaloader/session-{username}")
     if os.path.exists(session_file):
         os.remove(session_file)
         print(f"Removed session file for username: {username}")
@@ -17,7 +17,7 @@ def download_instagram_videos(username, password, output_folder, days=7, max_vid
 
     try:
         if username:
-            session_file = f"/home/minab/.config/instaloader/session-{username}"
+            session_file = os.path.expanduser(f"~/.config/instaloader/session-{username}")
 
             try:
                 L.load_session_from_file(username, filename=session_file)  # Load session for authenticated access
@@ -72,4 +72,4 @@ def download_instagram_videos(username, password, output_folder, days=7, max_vid
     print(f"Total videos downloaded: {total_downloaded}")
 
 if __name__ == "__main__":
-    download_instagram_videos('selamudev2024', 'Sele@web123', "new-test-video", days=5)
+    download_instagram_videos('', '', "new-test-video", days=5)
